@@ -1,0 +1,11 @@
+name: Archive Website
+on:
+  push:
+    branches: [ main ]
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger archive.org snapshot
+        run: |
+          curl -I https://web.archive.org/save/https://we6jbobbs.org
